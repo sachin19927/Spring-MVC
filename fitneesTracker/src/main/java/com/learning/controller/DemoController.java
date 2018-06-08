@@ -12,6 +12,7 @@ public class DemoController {
 	{
 		System.err.println("testing github push..............");
 		model.addAttribute("greeting", "test");
+		System.err.println("sachin");
 		return "hello";
 	}
 }
