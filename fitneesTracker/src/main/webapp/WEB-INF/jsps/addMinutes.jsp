@@ -12,11 +12,13 @@
 <body>
 <h1>Add minutes Excercied</h1>
 
-<form:form>
+
+Language: <a href="?language=en">English</a> <a href="?language=ka">Kannada</a> | <a href="?language=hi">Hindi</a> | <a href="?language=eu">spanish</a>
+<form:form modelAttribute="excercise">
 
 <table>
 <tr>
-<td>Minutes worked Today</td>
+<td> <spring:message code="goal.text"/></td>
 <td><form:input path="minutes"/> </td>
 </tr>
 
