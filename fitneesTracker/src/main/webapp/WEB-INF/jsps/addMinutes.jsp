@@ -8,16 +8,48 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Minutes</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(
+		
+		function(){
+			$.getJSON('http://localhost:8181/fitneesTracker/activities.json',{
+				
+				ajax:'true'
+			}, function(data)
+			{
+				var html='<option value="">Select</option>';
+				var len=data.length;
+				
+				for(var i=0;i<len;i++)
+					{
+					html+='<option value="'+data[i].desc+'">"'+data[i].desc+'"</option> ';
+					}
+				html+='</option>';
+				$("#activites").html(html)
+			})
+		}
+		);
+
+
+</script>
 </head>
 <body>
 <h1>Add minutes Excercied</h1>
 
-<form:form>
+
+Language: <a href="?language=en">English</a> <a href="?language=ka">Kannada</a> | <a href="?language=hi">Hindi</a> | <a href="?language=eu">spanish</a>
+<form:form modelAttribute="excercise">
 
 <table>
 <tr>
-<td>Minutes worked Today</td>
+<td> <spring:message code="goal.text"/></td>
 <td><form:input path="minutes"/> </td>
+</tr>
+
+<tr>
+<td> <spring:message code="goal.text"/></td>
+<td><form:select id="activites" path="activity"> </form:select></td>
 </tr>
 
 <tr>
@@ -27,5 +59,6 @@
 
 </form:form>
 
+<h1>Out goal for the day : ${goal.minutes}</h1>
 </body>
 </html>
