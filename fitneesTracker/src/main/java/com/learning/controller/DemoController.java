@@ -10,6 +10,7 @@ public class DemoController {
 	@RequestMapping(value="/greeting")
 	public String sayHello(Model model)
 	{
+		System.out.println("prsaveen...............");
 		System.err.println("testing github push..............");
 		model.addAttribute("greeting", "test");
 		System.err.println("sachin");
