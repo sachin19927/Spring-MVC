@@ -1,6 +1,7 @@
 package com.learning.model;
 
 import org.hibernate.validator.constraints.Range;
+import org.springframework.lang.NonNull;
 
 public class Goal {
 
@@ -10,6 +11,7 @@ public class Goal {
 	@Range(min=1,max=120)
 	private int minutes;
 
+	
 	public int getMinutes() {
 		return minutes;
 	}
