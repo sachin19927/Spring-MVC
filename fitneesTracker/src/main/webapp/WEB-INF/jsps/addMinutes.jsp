@@ -20,7 +20,7 @@
 							var len = data.length;
 
 							for (var i = 0; i < len; i++) {
-								html += '<option value="'+data[i].desc+'">'+ data[i].desc + '</option> ';
+								html += '<option value="'+data[i].desc+'">"'+ data[i].desc + '</option> ';
 							}
 							html += '</option>';
 							$("#activites").html(html)
