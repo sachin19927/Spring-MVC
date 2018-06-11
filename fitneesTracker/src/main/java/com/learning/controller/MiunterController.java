@@ -25,7 +25,8 @@ public class MiunterController {
 	public String addMinutes(@ModelAttribute ("excercise") Excercise excercise)
 	{
 		System.err.println("Main");
-		System.err.println(excercise.getMinutes());
+		System.err.println("Excercise Minute "+excercise.getMinutes());
+		System.err.println("Excercise activity "+excercise.getActivity());
 		return "addMinutes";
 	}
 	

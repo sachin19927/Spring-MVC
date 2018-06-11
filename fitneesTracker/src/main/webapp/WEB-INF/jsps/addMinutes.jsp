@@ -8,31 +8,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add Minutes</title>
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript" src="resources/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-$(document).ready(
-		
-		function(){
-			//$.getJSON('http://localhost:8181/fitneesTracker/activities.json',{
-				$.getJSON('<spring:url value="activities.json" />',{
-						
-				ajax:'true'
-			}, function(data)
-			{
-				var html='<option value="">Select</option>';
-				var len=data.length;
-				
-				for(var i=0;i<len;i++)
-					{
-					html+='<option value="'+data[i].desc+'">"'+data[i].desc+'"</option> ';
-					}
-				html+='</option>';
-				$("#activites").html(html)
-			})
-		}
-		);
 
+	$(document).ready(
+			function() {
+				$.getJSON('http://localhost:8888/fitneesTracker/activities.json',{
+							ajax : 'true'
+						}, function(data) {
+							var html = '<option value="">Select</option>';
+							var len = data.length;
 
+							for (var i = 0; i < len; i++) {
+								html += '<option value="'+data[i].desc+'">'+ data[i].desc + '</option> ';
+							}
+							html += '</option>';
+							$("#activites").html(html)
+						})
+			});
 </script>
 </head>
 <body>

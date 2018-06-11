@@ -1,7 +1,6 @@
 package com.learning.model;
 
 import org.hibernate.validator.constraints.Range;
-import org.springframework.lang.NonNull;
 
 public class Goal {
 
